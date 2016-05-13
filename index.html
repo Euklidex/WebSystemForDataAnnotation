@@ -20,20 +20,30 @@
 
     <section class="main-content">
       
-      <p>Cílem projektu je vytvořit systém, který umožní značkování dat. Značkování probíhá následujícím způsobem: anotátor hodnotí jednotlivá slova podle toho, zda spadají do určité kategorie pomocí zakliknutí ano/ne (např.: pes &gt; _zvíře &gt; ano/ne). Označkovaná data jsou následně využitelná například ve strojovém učení.</p>
+	  <h2>Plán vývoje</h2>
+	  
+      <p>Cílem projektu „Webový systém na anotovanie dát” je vytvořit systém, který umožní značkování dat. Značkování probíhá následujícím způsobem: anotátor hodnotí jednotlivá slova podle toho, zda spadají do určité kategorie pomocí zakliknutí ano/ne (např.: pes > _zvíře > ano/ne). Označkovaná data jsou následně využitelná například ve strojovém učení.</p>
+	  
+	  <h3>1. krok: Návrh grafického zobrazení aplikace</h3>
+	  
+	  <p>Anotátoři by měli mít k dispozici tlačítka ano a ne, v praxi se osvědčilo jejich protilehlé umístění a příznačné zbarvení – tlačítko ne vlevo, zbarveno červeně, tlačítko ano vpravo, zbarveno zeleně. Můžeme zvážit zavedení klávesových zkratek, u těch však snadněji dochází k překlepům. Dále by anotátoři měli mít možnost vrátit se k předchozímu slovu, aby se mohli v případě potřeby opravit.</p>
+	  
+	  <p>Při procházení slov umístěných v kategoriích může nastat případ, kdy dané slovo zcela evidentně nespadá do zmíněné kategorie, jedná se o překlep. Měla by se zde proto vyskytovat možnost, jak chybu opravit, a to pomocí tlačítka k tomu určenému.</p>
+	  
+	  <p>Na tomto kroku momentálně pracujeme.</p>
 
-<p>K ověření stability názorů anotátora je zapotřebí implementovat zobrazování stejného dotazu dvakrát, a to s odstupem několika slov, a další akce, například přidání šumu.</p>
+	  <h3>2. krok: Implementace načítání dat ze souboru a rozdělení dat do balíků</h3>
+	  
+	  <p>Pokud máme například 1000 otázek, budou do bloků vloženy po stovce, pokud nebude doporučeno jinak.</p>
 
-<p>Na základě získaných výsledků bude vytvořena statistika (zobrazující rychlost práce jednotlivých anotátorů či údaj o tom, kolik procent anotátorů se shodlo). Tato statistika by měla být ke stažení, případně ve znovu vložitelném formátu.</p>
+	  <h3>3. krok: Nastavení přístupových práv pro jednotlivé balíky</h3>	
+	  
+	  <p>V práci s anotacemi je zásadní tzv. management, pod který spadá práce s anotacemi, rozdělení slov na balíky a s tím související nastavení přístupových práv. Balíky by měly být distribuovány mezi anotátory tak, aby byly anotované dvakrát.</p>
 
-<p>V práci s anotacemi je zásadní tzv. management, pod který spadá práce 
-s anotacemi, rozdělení slov na balíky – pro ty je třeba nastavit přístupová práva. Balíky by měly být distribuovány mezi anotátory tak, aby byly anotované dvakrát. Pokud máme například 1000 otázek, budou do bloků vloženy po stovce.</p>
-
-<p>Anotátoři by měli mít k dispozici tlačítka ano a ne, v praxi se osvědčilo jejich protilehlé umístění a příznačné zbarvení – tlačítko ne vlevo, zbarveno červeně, tlačítko ano vpravo, zbarveno zeleně. Můžeme zvážit klávesové zkratky, u těch však snadněji dochází k překlepům. Dále by anotátoři měli mít možnost vrátit se 
-k předchozímu slovu, aby se mohli v případě potřeby opravit.</p>
-
-<p>Při procházení slov umístěných v kategoriích může nastat případ, kdy dané slovo zcela evidentně nespadá do zmíněné kategorie, jedná se o překlep. Měla by se zde proto vyskytovat možnost, jak chybu opravit, a to pomocí tlačítka k tomu určenému.</p>
-
+	  <h3>4. krok: Přidání šumu, opakování otázek, statistika</h3>
+	  
+	  <p>K ověření stability názorů anotátora je zapotřebí implementovat zobrazování stejného dotazu dvakrát, a to s odstupem několika slov, a další akce, například přidání šumu. Tomu se budeme věnovat v závěrečné fázi projektu, stejně tak vytvoření statistik na základě získaných výsledků (zobrazujících rychlost práce jednotlivých anotátorů či údaj o tom, kolik procent anotátorů se shodlo). Statistika by měla být ke stažení, případně ve znovu vložitelném formátu.</p>
+	  
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/Euklidex/WebSystemForDataAnnotation">Webový systém na anotovanie dát</a> is maintained by <a href="https://github.com/Euklidex">Euklidex</a>.</span>
 
