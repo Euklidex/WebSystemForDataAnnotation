@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of blocks</title>
+</head>
+<body>
+<h3> Blocks to markup </h3>
+{% for block in blocks %}
+    <a href="{{ url_for('markup',block_id = block.id) }}">
+        {{ block.id }}
+    </a>
+{% endfor %}
+
+</body>
+</html>
