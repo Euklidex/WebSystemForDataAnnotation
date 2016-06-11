@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Znackovanie Dat</title>
+</head>
+<body>
+
+<div>
+    <h2>User Login</h2>
+
+    <form action="{{ url_for('login') }}" method="post">
+        <dl>
+
+            {{ form.name.label }}
+            {{ form.name }}
+
+            {{ form.password.label }}
+            {{ form.password }}
+
+            {{ form.submit }}
+
+        </dl>
+    </form>
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+</div>
+</body>
+</html>
