@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+
+<article lang="en">
+<articleinfo>
+    <title>Documentácia</title>
+    <author>
+        <firstname>Zuzana</firstname>
+        <surname>Schwarzová</surname>
+    </author>
+    <authorinitials>ZS</authorinitials>
+</articleinfo>
+<section id="documentation">
+<title>Dokumentácia</title>
+<simpara>Mojou prácou bolo postarať sa o testovacie súbory do nášho programu a o dokumentáciu k projektu.</simpara>
+<simpara>Testovacie súbory som vytvorila pomocou zoznamu slov, zoznamu cudzích slov a zoznamu zvierat nájdených na internete. Jednotlivé slová museli byť uložené každé v novom riadku textového súboru, pričom prvý riadok textového súboru obsahuje názov kategórie, ktorú budú následne anotátori značkovať. Tento textový súbor som potom poslala nášmu hlavnému programátorovi.</simpara>
+<simpara>Dokumentáciu projektu som spravila na Githube, pozostáva z vysvetlenia čo náš program robí, návodu na použitie a zo správ jednotlivých členov tímu. Správy bolo poterbné prekonvertovať z xml súboru do pdf.</simpara>
+</section>
+</article>

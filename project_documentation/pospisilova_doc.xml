@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+
+<article lang="en">
+<articleinfo>
+    <title>Documentace</title>
+    <author>
+        <firstname>Lucie</firstname>
+        <surname>Pospíšilová</surname>
+    </author>
+    <authorinitials>LP</authorinitials>
+</articleinfo>
+<section id="documentation">
+<title>Dokumentace</title>
+<simpara>Mojim podílem bylo vytvoření prezentace a textu na gitpages, rovnako i management našeho tímu.</simpara>
+<simpara>Náš tím se setkal tři razy na poradě naživo, ostatek jsme řešili přes internet. Na první poradě jsme byli za vedoucím projektu kvůli zadání našeho projektu. Následně jsme vytvořili náš pracovní plán a umístnili ho na gitpages našeho projektu. Naše druhá porada řešila problém bližšího návrhu projektu, rozdělení práce a výběru programovacího jazyka. Rozhodli jsme se pro Python a Javascript. Třetí schůzka už řešila jen závěr projektu.</simpara>
+<simpara>Prezentaci jsem se rozhodla udělat na základě našich bodů v pláne projektu.</simpara>
+</section>
+</article>
