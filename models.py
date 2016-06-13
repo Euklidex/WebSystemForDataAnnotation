@@ -1,9 +1,11 @@
 from app import db
 
 marks = db.Table('marks',
+                 db.Column('id',db.Integer, primary_key=True),
                  db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
                  db.Column('block_id', db.Integer, db.ForeignKey('block.id'))
                  )
+
 
 class User(db.Model):
     __table_args__ = {'extend_existing': True}

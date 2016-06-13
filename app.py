@@ -5,6 +5,7 @@ from models import *
 from flask_sqlalchemy import SQLAlchemy
 import json
 from xml import etree
+from random import randint
 
 app = Flask(__name__)
 app.debug = True
@@ -52,12 +53,18 @@ def markup(block_id):
         return redirect(url_for('login'))
      # if request.method == 'POST':
         # do data saving
-    words = {}
+    words = []
     block = Block.query.filter_by(id = block_id).first()
     for word in block.words:
-        words[word.id] = word.text
+        words.append(word.text)
+    add_duplicates(words, 1)
+    add_errors(words, 1)
     return render_template('markup.html', words=json.dumps(words), category=block.category)
 
+@app.route('/get_data', methods=['POST', 'GET'])
+def get_data():
+    print("okej")
+    return json.dumps({'success': True}), 200, {'ContentType': 'application/json'}
 
 @app.route('/admin', methods=['POST', 'GET'])
 def admin():
@@ -96,6 +103,7 @@ def divide_to_blocks(category, words):
     for i in range(len(words)):
         w = Word()
         w.text = words[i]
+        w.type = "Mark"
         w.block_id = blocks[i % block_count]
         db.session.add(w)
         db.session.commit()
@@ -107,6 +115,45 @@ def assign_to_user(blocks):
     for i in range(2 * len(blocks)):
         db.session.execute(marks.insert(), params={'user_id': users[i % len(users)].id, 'block_id':blocks[i % len(blocks)]})
     db.session.commit()
+
+
+def add_duplicates(words, part):
+    for i in range(len(words)  / part):
+        words.insert(randint(0, len(words)-1), words[randint(0, len(words) - 1)])
+
+
+def add_errors(words, part):
+    file = open('/home/user/PythonProjects/Project/Files/error.txt', 'r')
+    errors = file.read().splitlines()
+    for i in range(len(words) / part):
+        words.insert(randint(0, len(words)-1), errors[randint(0, len(errors)-1)])
+
+"""
+def make_errors(path):
+    file = open(path , 'r')
+    words = file.read().splitlines()
+    for i in range(len(words)):
+        w = Word()
+        w.text = words[i]
+        w.type = "Error"
+        w.block_id = blocks[i % block_count]
+        db.session.add(w)
+        db.session.commit()
+"""
+
+def create_xml(category):
+    blocks = Block.query.filter_by(category = category).all()
+    for block in blocks:
+        block.words
+
+    root = etree.Element('kategorie')
+    #root.text = # category
+
+
+    child = etree.Element('slova')
+    child.text = 'some text'
+    root.append(child)
+
 
 
 if __name__ == '__main__':

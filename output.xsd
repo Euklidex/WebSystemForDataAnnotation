@@ -9,9 +9,9 @@
 	</xs:element>			
 	<xs:simpleType name="kat_string">
 			<xs:restriction base="xs:string">
-				<xs:enumeration value="yes"/>
-				<xs:enumeration value="no"/>
-				<xs:enumeration value="error"/>
+				<xs:enumeration value="True"/>
+				<xs:enumeration value="False"/>
+				<xs:enumeration value="Error"/>
 			</xs:restriction>
 	</xs:simpleType>
 </xs:schema>

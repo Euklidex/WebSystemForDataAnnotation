@@ -6,21 +6,113 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{url_for('static', filename =  'css/style.css')}}">
+        <script   src="{{ url_for('static', filename='js/lib/jquery-2.2.2.js') }}"></script>
+
         <script>
-            var words = {{ words|safe }};
+            var array = {{ words|safe }};
+            var i = 0;
+            var newWords = {};
+            var size = 0;
+
+            function firstFunction() {
+                size = array.length;
+                document.getElementById("word").innerHTML = array[0];
+            }
+
+            function agree() {
+                newWords[array[i]] = "True";
+                i++;
+                if(i >= size -1 ){
+                    saveData();
+                    document.getElementById("word").innerHTML = 'Completed';
+                }
+                else {
+                    document.getElementById("word").innerHTML = array[i];
+                }
+            }
+
+            function dont(){
+                newWords[array[i]] = "False";
+                i++;
+                if(i >= size -1){
+                    saveData();
+                    document.getElementById("word").innerHTML = 'Completed';
+
+                }
+                else {
+                    document.getElementById("word").innerHTML = array[i];
+                }
+            }
+
+
+            function goBack(){
+                if (i > 0){
+                    i--;
+                    delete newWords[array[i]];
+                    document.getElementById("word").innerHTML = array[i];
+                }
+            }
+
+            function doError(){
+                newWords[array[i]] = "Error"
+                i++;
+                 if(i >= size){
+                     saveData();
+                     document.getElementById("word").innerHTML = 'Completed';
+                }
+                else {
+                    document.getElementById("word").innerHTML = array[i];
+                }
+            }
+
+            function help(){
+                document.getElementById("help").innerHTML = "Zaklikni ci slovo patri do kategorie."
+            }
+
+            function saveData(){
+                var data = {};
+
+                data = newWords;
+
+                document.getElementById("help").innerHTML = JSON.stringify(data)
+                $.ajax({
+                    type: 'POST',
+                    url: "{{ url_for('get_data') }}",
+                    data: JSON.stringify(data),
+                    contentType: 'application/json;charset=UTF-8',
+                     success: function(response) {
+                         console.log(response);
+
+                },
+
+                });
+                 console.log(data);
+            }
+
         </script>
+
     </head>
 
     <body>
-        <button id='agree' type="button">Agree</button>
-        <button id='dont' type="button">Don't Agree</button>
+
+
+        <button id='agree' type="button" onclick="agree()">Agree</button>
+        <button id='dont' type="button" onclick="dont()">Don't Agree</button>
+
         <div style="text-align:center;">
-            <button  type="button">Previous</button>
-            <button  type="button">error</button>
-            <button  type="button">Help</button>
+            <button  type="button" onclick="goBack()">Previous</button>
+            <button  type="button" onclick="doError()">error</button>
+            <button  type="button" onclick="help()">Help</button>
+            <button type="button" onclick="saveData()">Save</button>
         </div>
+
         <label id='cat' for="category">{{category}}</label>
-        <label id='word' for="word">Word</label>
+        <label id="word"></label>
+        <label id="help"></label>
+
+        <script>
+            window.onload = firstFunction();
+        </script>
     </body>
 
-</html>>
+</html>
