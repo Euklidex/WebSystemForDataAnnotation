@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+
+<article lang="en">
+<articleinfo>
+    <title>Documentácia</title>
+    <author>
+        <firstname>Matúš</firstname>
+        <surname>Hromádka</surname>
+    </author>
+    <authorinitials>MH</authorinitials>
+</articleinfo>
+<section id="documentation">
+<title>Dokumentácia</title>
+<simpara>Na starosti som mal vytvorenie Javascriptu k nášmu projektu.</simpara>
+<simpara>Javascript bolo potrebné vytvoriť k HTML stránke, ktorá umožnila značkovanie jednotlivých slov. Stránka pozostáva z niekoľkých tlačítok.</simpara>
+<simpara>Zelené tlačítko "Agree" priradí slovu hodnotu "True" a ukáže užívateľovi nové slovo. Červené tlačítko "Disagree"  priradí slovu hodnotu "False" a taktiež užívateľovi ukáže nové slovo. Tlačítko "Error" označí slovo za chybné, resp. nevhodné a priradí mu hodnotu "Error". Ešte je tam tlačítko "Help", ktoré vypíše užívateľovi nápovedu a tlačítko "Previous", ktoré užívateľovi umožňuje vrátiť sa o jedno slovo naspäť v prípade že pri značkovaní spravil preklep.</simpara>
+</section>
+</article>

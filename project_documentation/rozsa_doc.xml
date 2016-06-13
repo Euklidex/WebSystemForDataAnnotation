@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+
+<article lang="en">
+<articleinfo>
+    <title>Documentácia</title>
+    <author>
+        <firstname>Jozef</firstname>
+        <surname>Rózsa</surname>
+    </author>
+    <authorinitials>JR</authorinitials>
+</articleinfo>
+<section id="documentation">
+<title>Dokumentácia</title>
+<simpara>Moja úloha v projekte spočívala v naprogramovaní Pythonového jadra, nakoľko som sa s podobným problémom už v minulosti stretol.</simpara>
+<simpara>Pre jazyk Python sme sa rozhodli, pretože nám prišiel najjednoduchší na spracovanie z ohľadu databázy a spravovania užívateľov. Jednotlivé časti ktoré bolo treba naimplementovať boli načítanie textového súboru s dátmi a jeho premenenie na balíky, priraďovanie balíkov anotátorom z admin strany, prístup k jednotlivým balíkom z užívateľskej strany. Ďalej spracovanie výsledkov anotovania do xml súboru a štatistika.</simpara>
+<simpara>Načítanie textového súboru je riešené tlačítkom "Browse", ktoré nám otvorí prehliadač súborov na počítači a ponúkne možnosť nájsť žiadaný súbor. Textový súbor sa na balíky rozdelí po 100 slovách pokiaľ jeto možné, pokiaľ nie, tak po menej. Ďalej je možné nastaviť balíky na označkovanie jednotlivým anotátorom (prístupové práva).</simpara>
+</section>
+</article>
