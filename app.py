@@ -4,6 +4,7 @@ from forms import UserLoginForm
 from models import *
 from flask_sqlalchemy import SQLAlchemy
 import json
+from xml import etree
 
 app = Flask(__name__)
 app.debug = True
@@ -81,7 +82,7 @@ def admin():
 
 
 def divide_to_blocks(category, words):
-    block_length = 100
+    block_length = 3
     block_count = len(words) / block_length
     if len(words) % block_length != 0:
         block_count += 1
@@ -98,13 +99,14 @@ def divide_to_blocks(category, words):
         w.block_id = blocks[i % block_count]
         db.session.add(w)
         db.session.commit()
-    assign_blocks_to_user(blocks)
+    assign_to_user(blocks)
 
 
-def assign_blocks_to_user(blocks):
-    users = User.query.with_entities(User.id, User.blocks).all()
-
-    print(users)
+def assign_to_user(blocks):
+    users = User.query.all()
+    for i in range(2 * len(blocks)):
+        db.session.execute(marks.insert(), params={'user_id': users[i % len(users)].id, 'block_id':blocks[i % len(blocks)]})
+    db.session.commit()
 
 
 if __name__ == '__main__':
