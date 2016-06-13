@@ -19,7 +19,22 @@
     </section>
 
     <section class="main-content">
-      
+      	<h2>Stav projektu</h2>
+      	<p>Konečná verze projektu je téměř hotová. Sledujeme jednotlivé kroky vývoje, které jsou popsány níže:</p> 
+	<h3>První krok: návrh grafického zobrazení aplikace</h3> 
+	<p>Jedná se o jednoduchou HTML stránku, na které jsou rozlišeny jednotlivé kategorie (yes, no, error)</p>
+	<h3>Druhý krok: implementace načítání dat ze souboru a rozdělení dat do balíků</h3>
+	<p>Implementace byla provedena v jazyce Python. Pomocí tlačítka „Browse“ lze vybrat požadovaný soubor slov z počítače a tlačítkem „Upload“ jej nahrát.
+	Slova jsou následně rozdělena na několik částí tak, aby jich bylo v jednom balíku sto.</p>
+	<h3>Třetí krok: nastavení přístupových práv pro jednotlivé balíky</h3>
+	<p>Admin rovnoměrně rozdělí balíky mezi anotátory. Každý jeden balík je distribuován dvěma anotátorům, aby bylo možné srovnat jejich výsledky, shodu v odpovědích. 
+	Stejný podíl balíků (nejlepší případ: všichni anotátoři pracují stejně efektivně) zaručí vyváženost. Pokud by anotátorskou práci odvedli z převážné části například dva lidé (z x anotátorů), mohlo by (neprvoplánově) dojít k subjektivnímu ovlivnění výsledků.</p>  
+	<h3>Čtvrtý krok: přidání šumu, opakování otázek</h3>
+	<p>Kromě klasických anotací momentálně pracujeme na „nadstavbě“ – kontrole anotátorů, ať už se jedná o otestování stálosti názorů či jejich pozornosti.</p>
+	<h3>Pátý krok: statistika</h3>
+	<p>(Statistika zasluhuje samostatný bod, došlo tedy k rozšíření.) Tento krok je ještě zpracováván. Statistika bude vystihovat procentuální shodu anotátorů v odpovědích u téhož slova i rychlost práce anotátora (ta bude stanovena od začátku práce do stisku tlačítka „save“, uložení odpovědí).</p>
+	<p>Výsledky značkování jsou uložené v XML souboru, ze kterého budeme vycházet.</p>
+
 	  <h2>Plán vývoje</h2>
 	  
       <p>Cílem projektu „Webový systém na anotovanie dát” je vytvořit systém, který umožní značkování dat. Značkování probíhá následujícím způsobem: anotátor hodnotí jednotlivá slova podle toho, zda spadají do určité kategorie pomocí zakliknutí ano/ne (např.: pes > _zvíře > ano/ne). Označkovaná data jsou následně využitelná například ve strojovém učení.</p>
