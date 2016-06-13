@@ -1,0 +1,17 @@
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="kategorie" minOccurs="1" maxOccurs="1">
+		<xs:element name="slova" maxOccurs="unbounded">
+			<xs:complexType>
+				<xs:attribute name="anotace" type="kat_string"></xs:attribute>
+			</xs:complexType>
+		</xs:element>		
+	</xs:element>			
+	<xs:simpleType name="kat_string">
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="yes"/>
+				<xs:enumeration value="no"/>
+				<xs:enumeration value="error"/>
+			</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
