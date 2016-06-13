@@ -6,6 +6,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{url_for('static', filename =  'css/style.css')}}">
+        <script>
+            var words = {{ words|safe }};
+        </script>
     </head>
 
     <body>
@@ -16,7 +19,7 @@
             <button  type="button">error</button>
             <button  type="button">Help</button>
         </div>
-        <label id='cat' for="category">Category</label>
+        <label id='cat' for="category">{{category}}</label>
         <label id='word' for="word">Word</label>
     </body>
 

@@ -3,7 +3,7 @@ from app import db
 marks = db.Table('marks',
                  db.Column('id', db.Integer, primary_key=True),
                  db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
-                 db.Column('block.id', db.Integer, db.ForeignKey('block.id'))
+                 db.Column('block_id', db.Integer, db.ForeignKey('block.id'))
                  )
 
 
@@ -17,35 +17,29 @@ class User(db.Model):
                            backref=db.backref('users', lazy='dynamic'))
 
 
-class List(db.Model):
-    __table_args__ = {'extend_existing': True}
-
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(20))
-    blocks = db.relationship('Block', backref=db.backref("list"))
-
-
 class Block(db.Model):
     __table_args__ = {'extend_existing': True}
 
     id = db.Column(db.Integer, primary_key=True)
-    list_id = db.Column(db.Integer, db.ForeignKey("list.id"))
     category = db.Column(db.String(20))
-    items = db.relationship('Item', backref=db.backref("block"))
+    words = db.relationship('Word', backref=db.backref("block"))
+
+
+class Word(db.Model):
+    __table_args__ = {'extend_existing': True}
+
+    id = db.Column(db.Integer, primary_key=True)
+    text = db.Column(db.String(30))
+    block_id = db.Column(db.Integer, db.ForeignKey("block.id"))
+    type = db.Column(db.Enum("Error", "Mark", name='word_types'))
+    answers = db.relationship('Answer', backref=db.backref("word"))
 
 
 class Answer(db.Model):
     __table_args__ = {'extend_existing': True}
 
     id = db.Column(db.Integer, primary_key=True)
-    chosen = db.Column(db.Enum("True", "False", "Error", name='answer_options'))
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
-    item_id = db.Column(db.Integer, db.ForeignKey("item.id"))
-
-
-class Item(db.Model):
-    __table_args__ = {'extend_existing': True}
-
-    id = db.Column(db.Integer, primary_key=True)
-    word = db.Column(db.String(30))
-    answers = db.relationship('Answer', backref=db.backref("item"))
+    block_id = db.Column(db.Integer, db.ForeignKey("block.id"))
+    word_id = db.Column(db.Integer, db.ForeignKey("word.id"))
+    chosen = db.Column(db.Enum("True", "False", "Error", name='answer_options'))
