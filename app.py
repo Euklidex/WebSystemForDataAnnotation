@@ -14,7 +14,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:123@localhost/PB1
 
 db = SQLAlchemy(app)
 
-
 @app.route('/', methods=['POST', 'GET'])
 def login():
     if request.method == 'POST':
@@ -96,11 +95,9 @@ def admin():
 
 @app.route('/transform')
 def transform():
-    file = open("stats.txt", "w")
     root = etree.Element('categories')
     for value in db.session.query(Block.category).distinct():
-        print(value)
-        cat = etree.Element('category', name =str( value))
+        cat = etree.Element('category', name =str(value.category))
         root.append(cat)
         answers = etree.Element('answers')
         cat.append(answers)
@@ -117,18 +114,7 @@ def transform():
             answer.append(user)
             answer.append(chosen)
     s = etree.tostring(root, pretty_print=True)
-    file.write(s)
-    file.close()
-    print(file)
     print(s)
-
-    #print(dict)
-    #words = db.session.query(Answer.category, Answer.word, Answer.chosen)
-    #q = db.session.query(Answer.user_id, Answer.word,Answer.chosen).group
-
-    #db.session.query(RssUrl.id, db.func.count(RssUrl.id).label("count")
-    #                 ).join(RssUrl.rss_items).group_by(RssUrl.id)
-    #file.write()
 
     response = make_response(s)
     response.headers["Content-Disposition"] = "attachment; filename=stats.txt"
@@ -176,34 +162,6 @@ def add_errors(words, part):
     errors = file.read().splitlines()
     for i in range(len(words) / part):
         words.insert(randint(0, len(words) - 1), errors[randint(0, len(errors) - 1)])
-
-
-"""
-def make_errors(path):
-    file = open(path , 'r')
-    words = file.read().splitlines()
-    for i in range(len(words)):
-        w = Word()
-        w.text = words[i]
-        w.type = "Error"
-        w.block_id = blocks[i % block_count]
-        db.session.add(w)
-        db.session.commit()
-"""
-
-
-def create_xml(category):
-    blocks = Block.query.filter_by(category=category).all()
-    for block in blocks:
-        block.words
-
-    root = etree.Element('kategorie')
-    # root.text = # category
-
-
-    child = etree.Element('slova')
-    child.text = 'some text'
-    root.append(child)
 
 
 if __name__ == '__main__':

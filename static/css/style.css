@@ -20,19 +20,28 @@ div {
     position:absolute;
     transition: .5s ease;
     top: 60%;
-    left: 40%;
+    left: 35%;
 }
 
 #cat {
-  position:absolute;
+    position:absolute;
+    font-size: 150%;
     transition: .5s ease;
     top: 45%;
-    left: 45%;
+    left: 43%;
 }
 
 #word {
   position:absolute;
+    font-size: 350%;
     transition: .5s ease;
     top: 25%;
-    left: 45%;
+    left: 39%;
+}
+
+#help {
+    position:absolute;
+    transition: .5s ease;
+    top: 70%;
+    left: 40%;
 }
