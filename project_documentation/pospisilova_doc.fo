@@ -456,7 +456,7 @@
 <fo:block keep-with-next.within-column="always" space-before.optimum="10pt" space-before.minimum="10pt * 0.8" space-before.maximum="10pt * 1.2" hyphenate="false" text-align="center" start-indent="0pt" hyphenation-character="-" hyphenation-push-character-count="2" hyphenation-remain-character-count="2">Dokumentacia</fo:block>
 </fo:block>
 <fo:block space-before="0.5em" font-size="14.4pt">
-<fo:block>Lucie Pospisilova</fo:block>
+<fo:block>Lucie Brychtova</fo:block>
 </fo:block>
 </fo:block>
 </fo:block>
