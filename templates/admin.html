@@ -14,5 +14,10 @@
     {% for message in get_flashed_messages() %}
         <div class="flash">{{ message }}</div>
     {% endfor %}
+
+    <h1>Stats</h1>
+    <a href="{{ url_for('transform') }}">
+        Stats
+    </a>
 </body>
 </html>

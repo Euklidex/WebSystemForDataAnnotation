@@ -74,10 +74,9 @@
 
                 data = newWords;
 
-                document.getElementById("help").innerHTML = JSON.stringify(data)
                 $.ajax({
                     type: 'POST',
-                    url: "{{ url_for('get_data') }}",
+                    url: "{{ url_for('markup', block_id = block_id ) }}",
                     data: JSON.stringify(data),
                     contentType: 'application/json;charset=UTF-8',
                      success: function(response) {

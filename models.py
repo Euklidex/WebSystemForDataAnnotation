@@ -37,8 +37,6 @@ class Word(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(30))
     block_id = db.Column(db.Integer, db.ForeignKey("block.id"))
-    type = db.Column(db.Enum("Error", "Mark", name='word_types'))
-    answers = db.relationship('Answer', backref=db.backref("word"))
 
 
 class Answer(db.Model):
@@ -46,6 +44,6 @@ class Answer(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
-    block_id = db.Column(db.Integer, db.ForeignKey("block.id"))
-    word_id = db.Column(db.Integer, db.ForeignKey("word.id"))
+    category = db.Column(db.String(20))
+    word = db.Column(db.String(30))
     chosen = db.Column(db.Enum("True", "False", "Error", name='answer_options'))
