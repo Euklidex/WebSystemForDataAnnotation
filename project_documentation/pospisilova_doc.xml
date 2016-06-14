@@ -5,7 +5,7 @@
 
 <article lang="en">
 <articleinfo>
-    <title>Documentácia</title>
+    <title>Dokumentace</title>
     <author>
         <firstname>Lucie</firstname>
         <surname>Brychtová</surname>
@@ -13,9 +13,9 @@
     <authorinitials>LB</authorinitials>
 </articleinfo>
 <section id="documentation">
-<title>Dokumentácia</title>
-<simpara>Mojim podílem bylo vytvoření prezentace a textu na gitpages, rovnako i management našeho tímu.</simpara>
-<simpara>Náš tím se setkal tři razy na poradě naživo, ostatek jsme řešili přes internet. Na první poradě jsme byli za vedoucím projektu kvůli zadání našeho projektu. Následně jsme vytvořili náš pracovní plán a umístnili ho na gitpages našeho projektu. Naše druhá porada řešila problém bližšího návrhu projektu, rozdělení práce a výběru programovacího jazyka. Rozhodli jsme se pro Python a Javascript. Třetí schůzka už řešila jen závěr projektu.</simpara>
+<title>Dokumentace</title>
+<simpara>Mým podílem bylo vytvořit prezentaci a texty na gitpages, stejně tak management našeho týmu.</simpara>
+<simpara>Náš tým se k poradě setkal osobně třikrát, zbytek jsme řešili přes internet. Během první schůzky jsme navštívili vedoucího projektu, Mgr. Marka Gráce, Ph.D., kvůli zadání. Následně jsme vytvořili pracovní plán a umístnili jej na gitpages. Naše druhá porada řešila problém bližšího návrhu projektu, rozdělení práce a výběr programovacího jazyka. Rozhodli jsme se pro Python a Javascript. Třetí schůzka už řešila jen závěr projektu, dolaďování neddostatků.</simpara>
 <simpara>Prezentaci jsem se rozhodla udělat na základě našich bodů v pláne projektu.</simpara>
 </section>
 </article>
